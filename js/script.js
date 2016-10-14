@@ -12,7 +12,7 @@ function changeColor() {
 }
 
 function newQuote() {
-    $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=25&callback=", function(a) {
+    $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=25&callback=", function(a) {
         var num = Math.floor(Math.random() * a.length);
         $("#quotebox").html(a[num].content + "<p>— " + a[num].title + "</p>");
         content = encodeURIComponent(a[num].content.replace('<p>', "").replace('</p>', '')).replace(/'/g, '%27');
